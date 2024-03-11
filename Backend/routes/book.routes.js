@@ -29,6 +29,7 @@ router.get('/:id',async(req,res)=>{
 //add new books
 router.post('/addbook',async(req,res)=>{
     const book=req.body
+    console.log(book)
     try {
         const created_book=await Book.create(book)
         res.send(created_book)
