@@ -5,7 +5,7 @@ const Book=require('./Models/Books.models')
 const Router=require('./routes/book.routes.js')
 const cors=require('cors')
 require('dotenv').config();
-const url=process.env.url
+const uri=process.env.uri
 
 
 //declaring port and middleware
@@ -14,7 +14,7 @@ app.use(cors())
 app.use(express.json())
 
 //conection
-mongoose.connect(`${url}`).then(()=>{
+mongoose.connect(`${uri}`).then(()=>{
     console.log('Connected successfully')
     app.listen(port,()=>{
         console.log(`App listening on port ${port}`)
